@@ -3,7 +3,7 @@ A compatible implementation of `GetTotemInfo()` API for WoW Classic 1.13.3.
 
 
 ## Desc
-You should know that Blizzard removed the totem information API in Wow Classic, which caused many totem timers to not work.
+You should know that Blizzard removed the totem information API from Wow Classic 1.13.3, which caused many totem timers to not work.
 
 I created a simple addon and restored one of the APIs (`GetTotemInfo`). In this way most totem timers can work normally.
 
