@@ -14,6 +14,11 @@ The code from [RotationMaster](https://git.neuromancy.net/projects/RM/repos/rota
 
 Put it in your _classic_\Interface\AddOns folder and open the game. Your totem timer should work properly.
 
+### Verified working addons
+* NugRunning `1.13.29-classic`
+  <br>(Note: `1.13.29-classic` is the last available version. The newer version completely removes the totem timer, so it will not work either)
+* TotemTimers `1.06-classic`
+
 
 ## For AddOn Developer
 
