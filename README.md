@@ -7,17 +7,19 @@ You should know that Blizzard removed the totem information API from Wow Classic
 
 I created a simple addon and restored one of the APIs (`GetTotemInfo`). In this way most totem timers can work normally.
 
-The code from [RotationMaster](https://git.neuromancy.net/projects/RM/repos/rotationmaster/browse/fake.lua?until=a0a2fc3bdfb5fa8199f14d66bd22666258f67aa4&untilPath=fake.lua) and edited / fixed by SwimmingTiger.
+The code from [RotationMaster](https://git.neuromancy.net/projects/RM/repos/rotationmaster/browse/fake.lua?until=a0a2fc3bdfb5fa8199f14d66bd22666258f67aa4&untilPath=fake.lua) by PreZ and edited / fixed by SwimmingTiger.
 
 
 ## Usage
 
 Put it in your _classic_\Interface\AddOns folder and open the game. Your totem timer should work properly.
 
-### Verified working addons
+### Verified working addons without modification
 * NugRunning `1.13.29-classic`
   <br>(Note: `1.13.29-classic` is the last available version. The newer version completely removes the totem timer, so it will not work either)
 * TotemTimers `1.06-classic`
+
+![Totem timer works](https://user-images.githubusercontent.com/4986069/70828913-57928780-1e27-11ea-9faf-c51fb934fadb.gif)
 
 
 ## For AddOn Developer
@@ -49,3 +51,8 @@ haveTotem, totemName, startTime, duration, icon = GetTotemInfo(1 through 4)
 ```
 
 See details at https://wow.gamepedia.com/API_GetTotemInfo
+
+
+## License
+
+Inherited the Apache License Version 2.0 from the [Rotation Master](https://www.curseforge.com/wow/addons/rotation-master) project.

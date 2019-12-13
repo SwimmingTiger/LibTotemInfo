@@ -1,7 +1,7 @@
 --[[
 -- A compatible implementation of GetTotemInfo() API for WoW Classic 1.13.3.
 -- The code from <https://git.neuromancy.net/projects/RM/repos/rotationmaster/browse/fake.lua?until=a0a2fc3bdfb5fa8199f14d66bd22666258f67aa4&untilPath=fake.lua>
--- and edited / fixed by SwimmingTiger.
+-- by PreZ and edited / fixed by SwimmingTiger.
 ]]
 local MAJOR = "LibTotemInfo-1.0"
 local MINOR = 1 -- Should be manually increased
