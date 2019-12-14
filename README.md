@@ -19,6 +19,7 @@ And, if you get the folder `LibTotemInfo-master`, you can rename it to`!LibTotem
 * `LibTotemInfo-master`
 
 Then it should be in the addon list and displayed as `Lib: TotemInfo-1.0`. Enable it, and your totem timer will work again.
+
 ![AddOn List](https://user-images.githubusercontent.com/4986069/70845656-49c31d80-1e8c-11ea-8c72-a6554110acbb.jpg)
 
 
