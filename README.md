@@ -14,7 +14,9 @@ The code from [RotationMaster](https://git.neuromancy.net/projects/RM/repos/rota
 
 Download [LibTotemInfo-1.0.zip](https://github.com/SwimmingTiger/LibTotemInfo/releases/download/v1.0/LibTotemInfo-1.0.zip) and put it in your `World of Warcraft\_classic_\Interface\Addons\!LibTotemInfo` folder. Please note the leading `!`, it is to make it load earlier than other addons. Don't rename it.
 
-However, if you get the folder `LibTotemInfo-master`, you should rename it to`!LibTotemInfo` (This folder will appear when you download the repository ZIP directly. It is recommended to download the zip in [the Release page](https://github.com/SwimmingTiger/LibTotemInfo/releases)).
+And, if you get the folder `LibTotemInfo-master`, you can rename it to`!LibTotemInfo` (This folder will appear when you download the repository ZIP directly. It is recommended to download the zip in [the Release page](https://github.com/SwimmingTiger/LibTotemInfo/releases)) or keep the current name. The latest version of the addon folder can be named under the following two names:
+* `!LibTotemInfo`
+* `LibTotemInfo-master`
 
 Then it should be in the addon list and displayed as `Lib: TotemInfo-1.0`. Enable it, and your totem timer will work again.
 ![AddOn List](https://user-images.githubusercontent.com/4986069/70845656-49c31d80-1e8c-11ea-8c72-a6554110acbb.jpg)
