@@ -37,16 +37,17 @@ Then it should be in the addon list and displayed as `Lib: TotemInfo-1.0`. Enabl
 You can embed the project, just like this:
 
 ### your-addon.toc
-```
+```toc
 libs\!LibTotemInfo\embeds.xml
 your-file.lua
 ```
 
 ### your-file.lua
-```
+```lua
 local GetTotemInfo = LibStub("LibTotemInfo-1.0").GetTotemInfo
 for i =1, 4 do
     print(GetTotemInfo(i))
+    print(GetTotemTimeLeft(i))
 end
 ```
 
@@ -56,8 +57,9 @@ When `GetTotemInfo` does not exist, the library will register `GetTotemInfo` as 
 
 Interfaces currently implemented:
 
-```
+```lua
 haveTotem, totemName, startTime, duration, icon = GetTotemInfo(1 through 4)
+timeLeft = GetTotemTimeLeft(1 through 4)
 ```
 
 See details at https://wow.gamepedia.com/API_GetTotemInfo

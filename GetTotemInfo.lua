@@ -220,3 +220,22 @@ end
 if type(GetTotemInfo) ~= 'function' then
     GetTotemInfo = lib.GetTotemInfo
 end
+
+
+-- timeLeft = GetTotemTimeLeft(1 through 4)
+-- From: <https://github.com/SwimmingTiger/LibTotemInfo/issues/2>
+-- Author: Road-block
+function lib.GetTotemTimeLeft(elem)
+    local _, _, startTime, duration = lib.GetTotemInfo(elem)
+    local now = GetTime()
+    local expiration = startTime and duration and (startTime + duration)
+    if expiration and now < expiration then
+        return expiration - now
+    end
+    return 0
+end
+
+-- Exposing GetTotemTimeLeft() to other addons
+if type(GetTotemTimeLeft) ~= 'function' then
+    GetTotemTimeLeft = lib.GetTotemTimeLeft
+end
