@@ -193,7 +193,7 @@ lib.EventFrame:SetScript("OnEvent", function(_, event, ...)
     end
 end)
 
--- haveTotem, totemName, startTime, duration, icon = GetTotemInfo(1 through 4).
+-- haveTotem, totemName, startTime, duration, icon = GetTotemInfo(1 through 4)
 -- <https://wow.gamepedia.com/API_GetTotemInfo>
 function lib.GetTotemInfo(elem)
     local haveTotem, totemName, startTime, duration, icon = false, "", 0, 0, 0
@@ -201,7 +201,8 @@ function lib.GetTotemInfo(elem)
         return haveTotem, totemName, startTime, duration, icon
     end
 
-    haveTotem = (GetItemCount(TotemItems[elem]) and true or false)
+    local totemItem = GetItemCount(TotemItems[elem])
+    haveTotem = (totemItem and totemItem > 0) and true or false
     if haveTotem and ActiveTotems[elem] then
         totemInfo = ActiveTotems[elem]
         startTime = totemInfo.cast
