@@ -4,7 +4,7 @@
 -- by PreZ and edited / fixed by SwimmingTiger.
 ]]
 local MAJOR = "LibTotemInfo-1.0"
-local MINOR = 1 -- Should be manually increased
+local MINOR = 10001 -- Should be manually increased
 local LibStub = _G.LibStub
 
 assert(LibStub, MAJOR .. " requires LibStub")

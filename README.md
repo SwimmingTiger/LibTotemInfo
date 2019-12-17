@@ -28,6 +28,7 @@ Then it should be in the addon list and displayed as `Lib: TotemInfo-1.0`. Enabl
   <br>(Note: `1.13.29-classic` is the last available version. The newer version completely removes the totem timer, so it will not work either)
 * TotemTimers `1.06-classic`
 * SamyTotemTimers `v2.6`
+* PitBull4 `v4.1.21`
 
 ![Totem timer works](https://user-images.githubusercontent.com/4986069/70828913-57928780-1e27-11ea-9faf-c51fb934fadb.gif)
 
