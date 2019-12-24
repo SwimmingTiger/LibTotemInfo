@@ -16,10 +16,10 @@ if not lib then
 end -- No upgrade needed
 
 local TotemItems = {
-    [EARTH_TOTEM_SLOT] = 5175,
-    [FIRE_TOTEM_SLOT] = 5176,
-    [WATER_TOTEM_SLOT] = 5177,
-    [AIR_TOTEM_SLOT] = 5178,
+	[EARTH_TOTEM_SLOT] = 5175,
+	[FIRE_TOTEM_SLOT] = 5176,
+	[WATER_TOTEM_SLOT] = 5177,
+	[AIR_TOTEM_SLOT] = 5178,
 }
 
 -- Generate the table with this script:
@@ -435,47 +435,47 @@ local TotemSpells = {
 local ActiveTotems = {}
 
 function lib.HandleTotemSpell(id)
-    local totem = TotemSpells[id]
-    if totem then
-        local name, _, icon = GetSpellInfo(id)
-        name = name or ""
+	local totem = TotemSpells[id]
+	if totem then
+		local name, _, icon = GetSpellInfo(id)
+		name = name or ""
 		icon = icon or 0
 
 		-- Some addons use spell names for matching. Attaching rank will cause the match to fail.
 		--[[
 		local subtext = GetSpellSubtext(id)
-        if subtext and #subtext > 0 then
-            name = name..' '..subtext
+		if subtext and #subtext > 0 then
+			name = name..' '..subtext
 		end
 		]]
 
-        ActiveTotems[totem.element] = {
-            spellid = id,
-            name = name,
-            icon = icon,
-            duration = totem.duration,
-            cast = GetTime(),
-            acknowledged = false,
-        }
-    end
+		ActiveTotems[totem.element] = {
+			spellid = id,
+			name = name,
+			icon = icon,
+			duration = totem.duration,
+			cast = GetTime(),
+			acknowledged = false,
+		}
+	end
 end
 
 function lib.HandleTotemEvent(elem)
-    if ActiveTotems[elem] then
-        if not ActiveTotems[elem].acknowledged then
-            ActiveTotems[elem].acknowledged = true
-        else
-            ActiveTotems[elem] = nil
-        end
-    end
+	if ActiveTotems[elem] then
+		if not ActiveTotems[elem].acknowledged then
+			ActiveTotems[elem].acknowledged = true
+		else
+			ActiveTotems[elem] = nil
+		end
+	end
 end
 
 function lib.UNIT_SPELLCAST_SUCCEEDED(event, unit, castguid, spellid)
-    lib.HandleTotemSpell(spellid)
+	lib.HandleTotemSpell(spellid)
 end
 
 function lib.PLAYER_TOTEM_UPDATE(event, elem)
-    lib.HandleTotemEvent(elem)
+	lib.HandleTotemEvent(elem)
 end
 
 lib.EventFrame = CreateFrame('Frame')
@@ -483,36 +483,36 @@ lib.EventFrame:RegisterEvent('UNIT_SPELLCAST_SUCCEEDED')
 lib.EventFrame:RegisterEvent('PLAYER_TOTEM_UPDATE')
 
 lib.EventFrame:SetScript("OnEvent", function(_, event, ...)
-    if type(lib[event]) == 'function' then
-        lib[event](event, ...)
-    end
+	if type(lib[event]) == 'function' then
+		lib[event](event, ...)
+	end
 end)
 
 
 -- haveTotem, totemName, startTime, duration, icon = GetTotemInfo(1 through 4)
 -- <https://wow.gamepedia.com/API_GetTotemInfo>
 function lib.GetTotemInfo(elem)
-    local haveTotem, spellName, startTime, duration, icon = false, "", 0, 0, 0
+	local haveTotem, spellName, startTime, duration, icon = false, "", 0, 0, 0
 
-    if (TotemItems[elem]) then
-        local totemItem = GetItemCount(TotemItems[elem])
-        haveTotem = (totemItem and totemItem > 0) and true or false
-    end
+	if (TotemItems[elem]) then
+		local totemItem = GetItemCount(TotemItems[elem])
+		haveTotem = (totemItem and totemItem > 0) and true or false
+	end
 
-    if ActiveTotems[elem] then
-        totemInfo = ActiveTotems[elem]
-        spellName = totemInfo.name
-        startTime = totemInfo.cast
-        duration = totemInfo.duration
-        icon = totemInfo.icon
-    end
+	if ActiveTotems[elem] then
+		totemInfo = ActiveTotems[elem]
+		spellName = totemInfo.name
+		startTime = totemInfo.cast
+		duration = totemInfo.duration
+		icon = totemInfo.icon
+	end
 
-    return haveTotem, spellName, startTime, duration, icon
+	return haveTotem, spellName, startTime, duration, icon
 end
 
 -- Exposing GetTotemInfo() to other addons
 if type(GetTotemInfo) ~= 'function' then
-    GetTotemInfo = lib.GetTotemInfo
+	GetTotemInfo = lib.GetTotemInfo
 end
 
 
@@ -520,16 +520,16 @@ end
 -- From: <https://github.com/SwimmingTiger/LibTotemInfo/issues/2>
 -- Author: Road-block
 function lib.GetTotemTimeLeft(elem)
-    local _, _, startTime, duration = lib.GetTotemInfo(elem)
-    local now = GetTime()
-    local expiration = startTime and duration and (startTime + duration)
-    if expiration and now < expiration then
-        return expiration - now
-    end
-    return 0
+	local _, _, startTime, duration = lib.GetTotemInfo(elem)
+	local now = GetTime()
+	local expiration = startTime and duration and (startTime + duration)
+	if expiration and now < expiration then
+		return expiration - now
+	end
+	return 0
 end
 
 -- Exposing GetTotemTimeLeft() to other addons
 if type(GetTotemTimeLeft) ~= 'function' then
-    GetTotemTimeLeft = lib.GetTotemTimeLeft
+	GetTotemTimeLeft = lib.GetTotemTimeLeft
 end
