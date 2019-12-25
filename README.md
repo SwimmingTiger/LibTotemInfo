@@ -59,7 +59,12 @@ When `GetTotemInfo` does not exist, the library will register `GetTotemInfo` as 
 Interfaces currently implemented:
 
 ```lua
-haveTotem, totemName, startTime, duration, icon = GetTotemInfo(1 through 4)
+-- Added return value by the lib (not in Blizzard old interface):
+--     spellid - int, the totem's spell id.
+--     rank    - int (1 to 8) or nil, the rank of the totem spell.
+--               nil indicates that there is no rank for this totem.
+haveTotem, totemName, startTime, duration, icon, spellid, rank = GetTotemInfo(1 through 4)
+
 timeLeft = GetTotemTimeLeft(1 through 4)
 ```
 
