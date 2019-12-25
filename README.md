@@ -25,7 +25,7 @@ Then it should be in the addon list and displayed as `Lib: TotemInfo-1.0`. Enabl
 
 ### Verified working addons without modification
 * NugRunning `1.13.29-classic`
-  <br>(Note: `1.13.29-classic` is the last available version. The newer version completely removes the totem timer, so it will not work either)
+  <br>(The latest version of NugRunning has LibTotemInfo embedded and no longer needs to be installed separately.)
 * TotemTimers `1.06-classic`
 * SamyTotemTimers `v2.6`
 * PitBull4 `v4.1.21`
