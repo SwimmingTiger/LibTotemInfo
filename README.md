@@ -9,6 +9,12 @@ So I don't think we need this addon anymore.
 
 Please consider removing `!LibTotemInfo` to see if the other addon is working well.
 
+## 已废弃 (Discarded: zhCN)
+
+我发现魔兽怀旧服1.13.4已经加回 `GetTotemInfo()` 和 `GetTotemTimeLeft()` 函数，所以不再需要这个插件。
+
+请考虑删除 `!LibTotemInfo` 然后看看图腾插件是否依然正常。
+
 ## Desc
 You should know that Blizzard removed the totem information API from Wow Classic 1.13.3, which caused many totem timers to not work.
 
