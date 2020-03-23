@@ -1,6 +1,13 @@
 # LibTotemInfo-1.0
 A compatible implementation of `GetTotemInfo()` API for WoW Classic 1.13.3.
 
+## Discarded
+
+I noticed that Wow Classic 1.13.4 has been added `GetTotemInfo()` and `GetTotemTimeLeft()` back.
+
+So I don't think we need this addon anymore.
+
+Please consider removing `!LibTotemInfo` to see if the other addon is working well.
 
 ## Desc
 You should know that Blizzard removed the totem information API from Wow Classic 1.13.3, which caused many totem timers to not work.
